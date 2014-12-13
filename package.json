@@ -1,0 +1,20 @@
+{
+  "name": "get-headlines",
+  "version": "0.0.6",
+  "description": "Get news headlines from around Canada and the US from your command line",
+  "main": "./lib/get-headlines.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pippin Lee",
+  "license": "MIT",
+  "dependencies": {
+    "cli-color": "^0.3.2",
+    "commander": "^2.5.0",
+    "minimist": "^1.1.0",
+    "scraperjs": "^0.3.1"
+  },
+  "bin": {
+    "get-headlines": "./lib/get-headlines.js"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "canada" : [
+    {"name":"Toronto Star", "url":"http://www.thestar.com/news.html", "query": ".single-top-story .headline a"},
+    {"name": "National Post Toronto", "url": "http://www.nationalpost.com/index.html", "query": ".npBlock h1 a"},
+    {"name": "CBC Toronto","url": "http://www.cbc.ca/news/canada/toronto","query": ".topstories-firstheadline a"},
+    {"name": "CTV Toronto","url": "http://toronto.ctvnews.ca/","query": ".topstorybn .teaserTitle a"},
+    {"name": "Global News Toronto","url": "http://globalnews.ca/toronto/","query": ".top-story-text h3.story-h a"},
+    {"name": "CP24 Toronto","url": "http://www.cp24.com/news","query": ".listHorizontalTop li.dc.teaserLink h2.teaserTitle a"},
+    {"name": "CBC Montreal","url": "http://www.cbc.ca/news/canada/montreal","query": ".topstories-firstheadline a"},
+    {"name": "CTV Montreal", "url": "http://montreal.ctvnews.ca/", "query": ".topstorybn .teaserTitle a"},
+    {"name": "Global News Montreal", "url": "http://globalnews.ca/montreal/", "query": ".top-story-text h3.story-h a"},
+    {"name": "Montreal Gazette","url": "http://montrealgazette.com/category/news/local-news","query": "#section_0 h2 a"},
+    {"name": "CBC Vancouver","url": "http://www.cbc.ca/news/canada/british-columbia","query": ".topstories-firstheadline a"},
+    {"name": "Global News Vancouver", "url": "http://globalnews.ca/bc/", "query": ".top-story-text h3.story-h a"},
+    {"name": "CTV Vancouver", "url": "http://vancouver.ctvnews.ca/", "query": ".topstorybn .teaserTitle a"},
+    {"name": "Globe and Mail", "url": "http://www.theglobeandmail.com/news/toronto/", "query": ".x300x300:first-child .column-1 article h5.articleTitle a"}
+  ],
+  "usa" : [
+    {"name": "LA Times", "url": "http://www.latimes.com/local/", "query": "a.trb_outfit_primaryItem_article_title_a"},
+    {"name": "LA Daily News", "url": "http://www.dailynews.com/local-news/","query": "#top-story h2 a"},
+    {"name": "UT San Deigo ", "url": "http://www.utsandiego.com/news/local-topics/", "query": "div.content h2 a"},
+    {"name": "KUSI News", "url": "http://www.kusi.com/category/282069/local-headlines", "query": "li.wnItem.feature.News.story.priority-1 h4.wnContent.headline span.text:first-child"},
+    {"name": "Voice Of San Deigo", "url": "http://voiceofsandiego.org/", "query": "article#feature_article.twelve.columns.article_featured div.article_padding a h3.has-image"},
+    {"name": "San Jose Mercury News", "url": "http://www.mercurynews.com/bay-area-news/", "query": "#region3 .layout5FeatureItemBox a"},
+    {"name": "San Francisco Chronicle", "url": "http://www.sfchronicle.com/", "query": "div.collection.hero-full.hc-home-lead div.hl-item-1 h2.headline a"},
+    {"name": "KTVU", "url": "http://www.ktvu.com/", "query": "div.wnDSItems-standard:first-child div.wnDVSummary:nth-child(2) h4.wnRole-STORY a span"},
+    {"name": "New York Times", "url": "http://www.nytimes.com/pages/nyregion/", "query": ".columnGroup.first .ledeStory .storyHeader h1 a"},
+    {"name": "New York Post", "url": "http://nypost.com/news/", "query": "article.story-photo-box.top-story.story-1 h3 a"},
+    {"name": "New York Daily News", "url": "http://www.nydailynews.com/new-york", "query": ".teasersWrap:first-child div.teaser.banner:first-child h2 a"},
+    {"name": "New York Observer", "url": "http://observer.com/new-york/", "query": ".entry .entry-header .entry-title a"},
+    {"name": "Chicago Daily Herald", "url": "http://www.dailyherald.com/news/chicago/", "query": "ul.sectionNews li.top.clearFix a h1"},
+    {"name": "Texas Tribune", "url": "https://www.texastribune.org/", "query": ".topstory.grid .text_column header h1 a"},
+    {"name": "Dallas News", "url": "http://www.dallasnews.com/news/", "query": "div.widget.stories.topstory h1.default a"},
+    {"name": "Houston Chronicle", "url": "http://www.chron.com/news/houston-texas/houston/", "query": "div.hst-sectionhighlights.sh-standard div.sh-feature h3 a"},
+    {"name": "Boston Globe", "url": "http://www.bostonglobe.com/metro/metro-headlines", "query": "div.stories-top div.story:nth-child(1) h2.story-title a"},
+    {"name": "Boston.com", "url": "http://www.boston.com/news/", "query": "div.lead-tz-txt-bd h1.lead-tz-h a"},
+    {"name": "Boston Herald", "url": "http://bostonherald.com/news_opinion/local_coverage", "query": "div.views-row.views-row-1.views-row-odd.views-row-first.clearfix .node-tease.teaser-alt article div.teaser-copy header h2.node-title a"}
+  ],
+  "toronto" : [
+    {"name":"Toronto Star", "url":"http://www.thestar.com/news.html", "query": ".single-top-story .headline a"},
+    {"name": "National Post Toronto", "url": "http://www.nationalpost.com/index.html", "query": ".npBlock h1 a"},
+    {"name": "CBC Toronto","url": "http://www.cbc.ca/news/canada/toronto","query": ".topstories-firstheadline a"},
+    {"name": "CTV Toronto","url": "http://toronto.ctvnews.ca/","query": ".topstorybn .teaserTitle a"},
+    {"name": "Global News Toronto","url": "http://globalnews.ca/toronto/","query": ".top-story-text h3.story-h a"},
+    {"name": "CP24 Toronto","url": "http://www.cp24.com/news","query": ".listHorizontalTop li.dc.teaserLink h2.teaserTitle a"},
+    {"name": "Globe and Mail", "url": "http://www.theglobeandmail.com/news/toronto/", "query": ".x300x300:first-child .column-1 article h5.articleTitle a"}
+  ],
+  "montreal" : [
+    {"name": "CBC Montreal","url": "http://www.cbc.ca/news/canada/montreal","query": ".topstories-firstheadline a"},
+    {"name": "CTV Montreal", "url": "http://montreal.ctvnews.ca/", "query": ".topstorybn .teaserTitle a"},
+    {"name": "Global News Montreal", "url": "http://globalnews.ca/montreal/", "query": ".top-story-text h3.story-h a"},
+    {"name": "Montreal Gazette","url": "http://montrealgazette.com/category/news/local-news","query": "#section_0 h2 a"}
+  ],
+  "vancouver" : [
+    {"name": "CBC Vancouver","url": "http://www.cbc.ca/news/canada/british-columbia","query": ".topstories-firstheadline a"},
+    {"name": "Global News Vancouver", "url": "http://globalnews.ca/bc/", "query": ".top-story-text h3.story-h a"},
+    {"name": "CTV Vancouver", "url": "http://vancouver.ctvnews.ca/", "query": ".topstorybn .teaserTitle a"}
+  ],
+  "CA" : [
+    {"name": "LA Times", "url": "http://www.latimes.com/local/", "query": "a.trb_outfit_primaryItem_article_title_a"},
+    {"name": "LA Daily News", "url": "http://www.dailynews.com/local-news/","query": "#top-story h2 a"},
+    {"name": "UT San Deigo ", "url": "http://www.utsandiego.com/news/local-topics/", "query": "div.content h2 a"},
+    {"name": "KUSI News", "url": "http://www.kusi.com/category/282069/local-headlines", "query": "li.wnItem.feature.News.story.priority-1 h4.wnContent.headline span.text:first-child"},
+    {"name": "Voice Of San Deigo", "url": "http://voiceofsandiego.org/", "query": "article#feature_article.twelve.columns.article_featured div.article_padding a h3.has-image"},
+    {"name": "San Jose Mercury News", "url": "http://www.mercurynews.com/bay-area-news/", "query": "#region3 .layout5FeatureItemBox a"},
+    {"name": "San Francisco Chronicle", "url": "http://www.sfchronicle.com/", "query": "div.collection.hero-full.hc-home-lead div.hl-item-1 h2.headline a"},
+    {"name": "KTVU", "url": "http://www.ktvu.com/", "query": "div.wnDSItems-standard:first-child div.wnDVSummary:nth-child(2) h4.wnRole-STORY a span"}
+  ],
+  "NY" : [
+    {"name": "New York Times", "url": "http://www.nytimes.com/pages/nyregion/", "query": ".columnGroup.first .ledeStory .storyHeader h1 a"},
+    {"name": "New York Post", "url": "http://nypost.com/news/", "query": "article.story-photo-box.top-story.story-1 h3 a"},
+    {"name": "New York Daily News", "url": "http://www.nydailynews.com/new-york", "query": ".teasersWrap:first-child div.teaser.banner:first-child h2 a"},
+    {"name": "New York Observer", "url": "http://observer.com/new-york/", "query": ".entry .entry-header .entry-title a"}
+  ],
+  "IL" : [
+    {"name": "Chicago Daily Herald", "url": "http://www.dailyherald.com/news/chicago/", "query": "ul.sectionNews li.top.clearFix a h1"}
+  ],
+  "TX" : [
+    {"name": "Texas Tribune", "url": "https://www.texastribune.org/", "query": ".topstory.grid .text_column header h1 a"},
+    {"name": "Dallas News", "url": "http://www.dallasnews.com/news/", "query": "div.widget.stories.topstory h1.default a"},
+    {"name": "Houston Chronicle", "url": "http://www.chron.com/news/houston-texas/houston/", "query": "div.hst-sectionhighlights.sh-standard div.sh-feature h3 a"}
+  ],
+  "MA" : [
+    {"name": "Boston Globe", "url": "http://www.bostonglobe.com/metro/metro-headlines", "query": "div.stories-top div.story:nth-child(1) h2.story-title a"},
+    {"name": "Boston.com", "url": "http://www.boston.com/news/", "query": "div.lead-tz-txt-bd h1.lead-tz-h a"},
+    {"name": "Boston Herald", "url": "http://bostonherald.com/news_opinion/local_coverage", "query": "div.views-row.views-row-1.views-row-odd.views-row-first.clearfix .node-tease.teaser-alt article div.teaser-copy header h2.node-title a"}
+  ]
+}
