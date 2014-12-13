@@ -1,6 +1,6 @@
 {
   "name": "get-headlines",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Get news headlines from around Canada and the US from your command line",
   "main": "./lib/get-headlines.js",
   "scripts": {
@@ -16,5 +16,9 @@
   },
   "bin": {
     "get-headlines": "./lib/get-headlines.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pippinlee/news-cli.git"
   }
 }

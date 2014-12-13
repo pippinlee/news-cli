@@ -2,9 +2,9 @@
 
 Install globally with: **`npm install get-headlines -g`**
 
-Now you can get local headlines just by typing some of the following: 
+Now you can get local headlines just by typing some of the following:
 
-**`get-headlines vancouver`** 
+**`get-headlines vancouver`**
 
 **`get-headlines CA`**
 
@@ -17,6 +17,6 @@ Now you can get local headlines just by typing some of the following:
 ![arguments](https://cldup.com/jMsJrAsJm8.png)
 
 
-### Next version include below penguin to bring headlines
+### Next version may include below penguin to bring headlines
 
 ![bring you some headlines](https://cldup.com/h95L3HCeYI.gif)
