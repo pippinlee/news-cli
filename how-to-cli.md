@@ -1,8 +1,18 @@
-# Building command line tools for journalist: headline scraper
+# Command line tools for journalist: headline scraper
 
-We're going to build tool where you can type `get-headline canada` and you get headlines from the major Canadian news publications.
+We're going to build tool where you can type `get-headline canada` and you get headlines from the major Canadian news publications. The tutorial is based off a project I made a few months ago to get familiar with publishing to NPM whose code you can find here [github.com/pippinlee/news-cli](https://github.com/pippinlee/news-cli). The final project looks something like this:
 
-## Beginning
+![running live](http://giant.gfycat.com/PleasingIllfatedHydatidtapeworm.gif)
+
+There are two parts to this tutorial.
+
+**Part 1: the command line for fun and profit** goes over the basics of the command line. If you don't use the command line too often run through this one first. The goal here is to show you that there's lot of fun and power behind command line tools, so you might want to take it for a spin even if you know your way around the command line.
+
+**Part 2: building your first command line tool** is all about building a command line tool with JavaScript and NPM. Skip to this if you're used to jumping through command line tools and want to make one!
+
+## **Part 1: the command line for fun and profit**
+
+
 
 Command line tools have existed as long as computers have. Before you could right click to copy a file, you could type `cp afile.txt` into your shell. Command lines look visually different depending on which computer and shell you use, but they all function the same way. You type a command and press enter, and then the computer hopefully knows what you mean and acts out what you've typed in.
 
@@ -46,7 +56,7 @@ If you can do it in `Finder` your can do it in your command line.
 
 
 
-## Let's build a small tool
+## **Part 2: building your first command line tool**
 
 Now let's build a small tool so that you can get some local news headlines in your shell.
 
@@ -58,7 +68,7 @@ This project will be written in JavaScript, but a similar tool could made with P
 
 If you have Node and npm properly installed, you'll be able to enter the command `npm --version` and `node --version` and see a version number. If it's not installed properly, your shell will say that those commands aren't available.
 
-## Project setup
+### Project setup
 
 The goal of our small tool if for someone to be able to type `get-headline canada` or `get-headline toronto` into their shell and get the headlines that are currently on website.
 
@@ -66,7 +76,7 @@ We'll be getting these headlines by `scraping` these headlines from each news pu
 
 **I'll note here in big letters, that scraping is fine when done in moderation. If you setup a sraper to go to xyz.com every second, don't be surprised if that block your IP address. On the servers end, it just looks you're just loading a webpage. Be nice with your new found powers.**
 
-We can setup our project by creating our main file where our code is going into with `touch main.'s` and creating the file where our instructions for the scrapper will go `touch data.json`.
+We can setup our project by creating our main file where our code is going into with `touch main.js` and creating the file where our instructions for the scrapper will go `touch data.json`.
 
 We'll also need a `package.json file that we can create with `npm init` to hold the package dependencies and other info about our tool. The `npm init` command takes you through an interactive setup to get your `package.json` details setup. For now just give it the title `get-headlines` and set the `main` value to `index.js`, everything else can be left as default (if you press enter the default is selected).
 
@@ -121,16 +131,130 @@ If you then go back to your shell, and type `node index.js`, it should run and g
 
 You should now see how this would work. Before we go any further we need to think through how we'll want to structure our code to take a number of different news sites. To do this we can start using `data.json` file, and add a number of different sites. Each site will need a URL and unique query selector for the headline that you'll grab.
 
-	{
-  		"canada" : [
+```js
+{
+  "canada" : [
     {"name":"Toronto Star", "url":"http://www.thestar.com/news.html", "query": ".single-top-story .headline a"},
     {"name": "National Post Toronto", "url": "http://www.nationalpost.com/index.html", "query": ".npBlock h1 a"},
     {"name": "CBC Toronto","url": "http://www.cbc.ca/news/canada/toronto","query": ".topstories-firstheadline a"}
   ],
- 	 "usa" : [
+  "usa" : [
     {"name": "LA Times", "url": "http://www.latimes.com/local/", "query": "a.trb_outfit_primaryItem_article_title_a"},
     {"name": "LA Daily News", "url": "http://www.dailynews.com/local-news/","query": "#top-story h2 a"},
     {"name": "UT San Deigo ", "url": "http://www.utsandiego.com/news/local-topics/", "query": "div.content h2 a"}
   ]
 }
+```
+
+
+After we have a data.json file that looks like the above, we'll need to take a new approach to structuring our index.js file so that the main scraper functionality can be used to take any location we give it. We should be able to type `get-headlines canada` or `get-headlines usa`. To do this we'll make create a function called getHeadlines that closes over the main scraper functionality. We'll also need to add functionality for taking an argument which in this case is `canada` or `usa`, and the ability to read the URLS + element queries from `data.json`.
+
+In our function we can use comments to signify and make our code neater. We'll have 4 sections:
+
+1. Handle errors: if things go wrong with our data, this will tell us
+
+2. Parse: we'll need to look at our `data.json` file
+
+3. Argument: we'll need to at what the user asked for in their command line instruction
+
+4. Scrape: we'll need to go and grab the headline with the `scraperjs` functionality
+
+Let's start by adding the ability to read `data.json` from `index.js`. We can use the `fs` module
+
+
+Say for instance you accidentally type the filename as `path.resolve(__dirname, 'daata.json')...`, the console will give you an error when you try to run the program because it should be `data.json`.
+
+At this point our function formatting looks like the following:
+
+```js
+var argument = process.argv[2]
+
+function getHeadlines(){
+  fs.readFile( path.resolve(__dirname, './data.json'), {encoding: 'UTF-8'}, function(err, data)  {
+
+  // catch errors
+  if (err){
+        console.error(err) && process.exit(1);
+  }
+  // parse JSON for URL and element query selector
+
+  // get user argument
+
+  // get headline
+
+  });
+}
+```
+
+Notice that we included initializing a global variable `arguments` just before the function as well. This grabs the first argument the user enters after `get-headlines`. While generally it's not good to have a varaible in the global scope, it's helpful here to have access to that information in and outside of the function.
+
+### Parse
+
+We'll now need to define our data that we're reading using the `fs` module. We'll also initialize a `usa` , `canada`, and `userInput` variable to make working with comamnds easier.
+
+
+
+```js
+// parse JSON for URL and element query selector
+var headlineData = JSON.parse(data);
+var canada = headlineData.canada;
+var usa = headlineData.usa;
+var userInput;
+```
+
+
+### Argument
+Next, we want to check that the argument that the user gives is one of the options we have in our data. If the user enters `get-headlines canada` or `get-headlines usa` then we'll have an object and its key/values to work with from `data.json`.
+
+
+### Scrape
+
+We've structure our `data.json` so that if we give the scraper a specific object it have a URL and query parameter ready for us. This will allow us to loop through all `canada` or `usa` news publications we add to each country using JavaScript's `forEach()`. The URL and DOM query parameter that the scraper is expecting can now be replaced with the more robust `e.url` and `e.query` methods.
+
+We can add this into at the bottom of our function and will look something like this:
+
+```js
+// get headline
+userInput.forEach(function(e){
+  scraperjs.StaticScraper
+      .create(e.url)
+      .scrape(function($) {
+          return $(e.query).map(function() {
+              return $(this).text();
+          }).get();
+      }, function(news) {
+          console.log(news);
+      });
+  });
+```
+
+If we add `getHeadlines()` at the bottom of the file, we can test to see if anything is running smoothly. Hop back to your command and type `node index.js canada` and you should get a few headlines. Now try `node index.js usa`. Fun, right!
+
+## Clean up
+
+What happens if the user accidently types `get-headlines caanada`. Well Canadians will know this is an incorrect spelling, but so will our program, because it won't recognize `caanada` as anything it is familiar with. Instead of saying shepishly responding "Sorry, that doesn't look familiar", the machine will reponse with an slightly obscur text about something being undefined. It's our job to make sure the user knows what they've done, and it's JUST AS IMPORTANT to give the user feedback when they've gone adrift.
+
+To fix the problem of incorrect instructions, we can do two things:
+
+1. Give our small tool a `--help` flag, that gives users instructions if they need a tip, or type in something that doesn't match up with what our program is expecting. We can do this by using the wonderful [`commander`](https://www.npmjs.com/package/commander) module.
+
+So, as before, go back to your command line and add it as a dependency with `npm install commander --save`. If it downloads properly you'll see a new directory in `node_modules` called  `commander`.
+
+Also be sure to add it to the top of our file with the rest of our module depencies. At the bottom of `index.js` we can now add some info to help the user along. If you type `node index.js caanada` now you'd see `commander` as work, but let's add some more info BECAUSE THE USER IS WHAT MATTERS.
+
+```js
+program
+  .option('canada', 'Just Canadian headlines')
+  .option('usa', 'Just US headlines')
+  .option('More updates to this module soon!', '')
+  .parse(process.argv);
+```
+
+If you save and try `node index.js caanada` now, you'll see it now gives you some helpful tips!
+
+
+
+## How do we begin to use this as a CLI
+
+Right now we're still running this small using the `node` command to run `index.js`, but we want to be able to type `get-headlines canada` wherever you are in your terminal and get an output. Let's learn how to do that.
 
