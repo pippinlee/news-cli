@@ -1,6 +1,6 @@
 {
   "name": "get-headlines",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "Get news headlines from around Canada and the US from your command line",
   "main": "./lib/get-headlines.js",
   "scripts": {

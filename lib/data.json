@@ -36,6 +36,12 @@
     {"name": "Boston.com", "url": "http://www.boston.com/news/", "query": "div.image-tease__text--overlay:nth-child(1)"},
     {"name": "Boston Herald", "url": "http://bostonherald.com/news_opinion/local_coverage", "query": "div.views-row.views-row-1.views-row-odd.views-row-first.clearfix .node-tease.teaser-alt article div.teaser-copy header h2.node-title a"}
   ],
+  "UK" : [
+    {"name": "BBC", "url": "http://www.bbc.com/news/uk", "query": ".buzzard-item > a:nth-child(1) > h3:nth-child(1) > span:nth-child(1)"},
+    {"name": "The Guardian", "url": "http://www.theguardian.com/uk-news", "query": "#uk-news > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > ul:nth-child(1) > li:nth-child(1) > div:nth-child(1) > div:nth-child(1) > a:nth-child(3)"},
+    {"name": "The Telegraph", "url": "http://www.telegraph.co.uk/news/", "query": "div.summaryBig:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(1) > a:nth-child(1)"},
+    {"name": "The Independent", "url": "http://www.independent.co.uk/news/uk", "query": "div.row:nth-child(1) > article:nth-child(1) > div:nth-child(1) > div:nth-child(2) > h1:nth-child(2) > a:nth-child(1)"}
+  ],
   "toronto" : [
     {"name":"Toronto Star", "url":"http://www.thestar.com/news.html", "query": ".single-top-story .headline a"},
     {"name": "National Post Toronto", "url": "http://www.nationalpost.com/index.html", "query": ".npBlock h1 a"},
