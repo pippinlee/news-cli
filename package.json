@@ -2,9 +2,13 @@
   "name": "get-headlines",
   "version": "0.0.9",
   "description": "Get news headlines from around Canada and the US from your command line",
-  "main": "./lib/get-headlines.js",
+  "main": "./lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm-run-all test:*",
+      "test:canada": "node ./lib/index.js canada",
+      "test:usa": "node ./lib/index.js usa",
+      "test:uk": "node ./lib/index.js uk",
+    "start": "onchange './lib/*.js' './lib/*.json' -- npm test"
   },
   "author": "Pippin Lee",
   "license": "MIT",
@@ -15,10 +19,16 @@
     "scraperjs": "^0.3.1"
   },
   "bin": {
-    "get-headlines": "./lib/get-headlines.js"
+    "get-headlines": "./lib/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/pippinlee/news-cli.git"
+  },
+  "devDependencies": {
+    "intercept-stdout": "^0.1.2",
+    "mocha": "^2.3.3",
+    "onchange": "^2.0.0",
+    "should": "^7.1.0"
   }
 }
